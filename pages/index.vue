@@ -451,22 +451,27 @@
           {{ item.description }}
         </p>
 
-        <div class="mt-6 flex justify-center">
-          <div v-for="member in item.members" :key="member.name" class="m-4">
+        <div class="mt-6 flex flex-wrap justify-center">
+          <div
+            v-for="member in item.members"
+            :key="member.name"
+            class="m-4 w-48 flex flex-wrap justify-center"
+          >
             <img
               class="object-contain object-center h-64 rounded-md shadow"
               :src="userIcon(item.name, item.root, member.name)"
             />
-            <h3 class="mt-2 font-medium text-gray-700">{{ member.name }}</h3>
-            <p class="text-sm text-gray-600">@{{ member.twitter }}</p>
-            <p
-              class="text-sm text-gray-600"
-              @click="
-                openModal(item.name, item.root, member.name, member.twitter)
-              "
-            >
-              詳しく見る
-            </p>
+            <div>
+              <h3 class="mt-2 font-medium text-gray-700">{{ member.name }}</h3>
+              <p
+                class="text-sm text-gray-600"
+                @click="
+                  openModal(item.name, item.root, member.name, member.twitter)
+                "
+              >
+                詳しく見る
+              </p>
+            </div>
           </div>
         </div>
       </div>

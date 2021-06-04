@@ -78,6 +78,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    'nuxt-lazy-load',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
