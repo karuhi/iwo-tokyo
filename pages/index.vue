@@ -477,18 +477,10 @@
       </div>
     </section>
     <Modal v-if="modalFlag" @close-modal="closeModal">
-      <div class="grid gap-8 mt-6 md:grid-cols-2 lg:grid-cols-2">
+      <div class="grid gap-8 mt-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         <div>
           <img
-            class="
-              object-contain object-center
-              h-64
-              rounded-md
-              shadow
-              h-64
-              md:h-full
-              lg:h-full
-            "
+            class="left object-contain object-center rounded-md shadow w-64"
             :src="
               userIcon(
                 modalData.teamName,
@@ -520,7 +512,9 @@
       <div
         class="container flex items-center justify-between px-6 py-8 mx-auto"
       >
-        <p class="text-gray-500">© 2021 All Rights Reserved.</p>
+        <p class="text-gray-500">
+          © 2021 ロケットリーグ 日本コミュニティ All Rights Reserved.
+        </p>
       </div>
     </footer>
   </div>
