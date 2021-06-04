@@ -452,14 +452,9 @@
         </p>
 
         <div class="mt-6 flex justify-center">
-          <!-- grid
-            gap-8
-            md:grid-cols-2
-            lg:grid-cols-4
-            justify-items-center -->
           <div v-for="member in item.members" :key="member.name" class="m-4">
             <img
-              class="object-contain object-center w-64 h-full rounded-md shadow"
+              class="object-contain object-center h-64 rounded-md shadow"
               :src="userIcon(item.name, item.root, member.name)"
             />
             <h3 class="mt-2 font-medium text-gray-700">{{ member.name }}</h3>
