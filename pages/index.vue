@@ -458,7 +458,7 @@
             class="m-4 w-48 flex flex-wrap justify-center"
           >
             <img
-              class="object-contain object-center h-64 rounded-md shadow"
+              class="object-contain object-center rounded-md shadow"
               :src="userIcon(item.name, item.root, member.name)"
             />
             <div>
@@ -480,7 +480,15 @@
       <div class="grid gap-8 mt-6 md:grid-cols-2 lg:grid-cols-2">
         <div>
           <img
-            class="object-contain object-center h-full rounded-md shadow"
+            class="
+              object-contain object-center
+              h-64
+              rounded-md
+              shadow
+              h-64
+              md:h-full
+              lg:h-full
+            "
             :src="
               userIcon(
                 modalData.teamName,
