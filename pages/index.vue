@@ -1,6 +1,6 @@
 <template>
   <div id="main-page">
-    <header class="bg-gray-700" x-data="{ isOpen: false }">
+    <header id="top" class="bg-gray-700" x-data="{ isOpen: false }">
       <nav
         class="
           container
@@ -75,7 +75,7 @@
               transform
               hover:text-indigo-400
             "
-            href="#"
+            href="#top"
             >TOP</a
           >
           <a
@@ -101,7 +101,7 @@
               transform
               hover:text-indigo-400
             "
-            href="#"
+            href="#teams"
             >チーム一覧</a
           >
           <a
@@ -149,8 +149,8 @@
                 rounded
                 hover:bg-red-400
               "
-              href="#"
-              >チーム一覧</a
+              href="#teams"
+              >チーム一覧を見る</a
             >
           </div>
         </div>
@@ -444,7 +444,7 @@
         </div>
       </div>
     </section> -->
-    <section class="bg-white" v-for="item in teams" :key="item.team">
+    <section class="bg-white" id="teams" v-for="item in teams" :key="item.team">
       <div class="max-w-5xl px-6 py-16 mx-auto text-center">
         <h2 class="text-3xl font-semibold text-gray-800">{{ item.name }}</h2>
         <p class="max-w-lg mx-auto mt-4 text-gray-600">
@@ -455,7 +455,10 @@
           <div
             v-for="member in item.members"
             :key="member.name"
-            class="m-4 w-48 flex flex-wrap justify-center"
+            class="m-4 w-48 flex flex-wrap justify-center cursor-pointer"
+            @click="
+              openModal(item.name, item.root, member.name, member.twitter)
+            "
           >
             <img
               class="object-contain object-center rounded-md shadow"
@@ -463,14 +466,7 @@
             />
             <div>
               <h3 class="mt-2 font-medium text-gray-700">{{ member.name }}</h3>
-              <p
-                class="text-sm text-gray-600"
-                @click="
-                  openModal(item.name, item.root, member.name, member.twitter)
-                "
-              >
-                詳しく見る
-              </p>
+              <p class="text-sm text-gray-600">詳しく見る</p>
             </div>
           </div>
         </div>
