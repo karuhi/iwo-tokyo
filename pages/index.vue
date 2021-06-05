@@ -243,7 +243,7 @@
       <div class="grid gap-8 mt-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         <div v-if="modalData.filename != ''">
           <img
-            class="left object-contain object-center rounded-md shadow w-64"
+            class="left object-contain object-center rounded-md shadow w-full"
             :src="
               userIcon(
                 modalData.teamName,
