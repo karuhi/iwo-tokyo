@@ -243,7 +243,7 @@
       <div class="grid gap-8 mt-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         <div v-if="modalData.filename != ''">
           <img
-            class="left object-contain object-center rounded-md shadow w-full"
+            class="object-contain object-center rounded-md shadow h-3/4"
             :src="
               userIcon(
                 modalData.teamName,
@@ -262,7 +262,14 @@
           <div class="p-4 text-2xl">{{ modalData.memberName }}</div>
           <div v-if="modalData.twitter != ''">
             <p>Twitter</p>
-            <div class="p-4 text-2xl">{{ modalData.twitter }}</div>
+            <div class="p-4 text-2xl">
+              <a
+                class="text-blue-500"
+                :href="`https://twitter.com/${modalData.twitter}`"
+              >
+                @{{ modalData.twitter }}
+              </a>
+            </div>
           </div>
         </div>
       </div>
