@@ -88,7 +88,7 @@
               transform
               hover:text-indigo-400
             "
-            href="#"
+            href="#overview"
             >概要</a
           >
           <a
@@ -118,8 +118,8 @@
               rounded
               hover:bg-indigo-400
             "
-            href="#"
-            >Get In Touch</a
+            href="https://rl-japan.com"
+            >ロケットリーグ 日本コミュニティに戻る</a
           >
         </div>
       </nav>
@@ -157,141 +157,122 @@
       </section>
     </header>
 
-    <!-- <section class="bg-white">
-      <div class="max-w-5xl px-6 py-16 mx-auto">
-        <div class="items-center md:flex md:space-x-6">
-          <div class="md:w-1/2">
-            <h3 class="text-2xl font-semibold text-gray-800">
-              Lorem ipsum dolor sit <br />
-              amet, consectetur
-            </h3>
-            <p class="max-w-md mt-4 text-gray-600">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum.
-            </p>
-            <a href="#" class="block mt-8 text-indigo-700 underline"
-              >Experienced team</a
-            >
+    <section id="overview" class="bg-white">
+      <div
+        class="
+          max-w-5xl
+          px-6
+          py-16
+          mx-auto
+          space-y-8
+          md:flex
+          md:items-center
+          md:space-y-0
+        "
+      >
+        <div class="md:w-2/3">
+          <div class="hidden md:flex md:items-center md:space-x-10">
+            <img
+              class="object-cover object-center rounded-md shadow w-72 h-72"
+              src="~/static/images/rl-4.jpg"
+            />
+            <img
+              class="object-cover object-center w-64 rounded-md shadow h-96"
+              src="~/static/images/rl-1.jpg"
+            />
           </div>
-
-          <div class="mt-8 md:mt-0 md:w-1/2">
-            <div class="flex items-center justify-center">
-              <div class="max-w-md">
-                <img
-                  class="object-cover object-center w-full rounded-md shadow"
-                  style="height: 500px"
-                  src="https://images.unsplash.com/photo-1618346136472-090de27fe8b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=673&q=80"
-                />
-              </div>
-            </div>
-          </div>
+          <h2 class="text-3xl font-semibold text-gray-800 md:mt-6">
+            Intel World Open Tokyo
+          </h2>
+          <p class="max-w-lg mt-4 text-gray-600">
+            Intel World Openでは、世界最高峰のRocket
+            Leagueプレイヤーたちが一堂に会します。<br />
+            その舞台は世界中にあり、各地域のトップチームは、4つの地域決勝戦に参加し、プレイヤーは、自分の国の誇りと総額25万ドル(約2733万円)の賞金を獲得するために戦います。<br />
+            【大会日程】<br />
+            オープン予選 : 2021年6月5日 17:00～<br />
+            オープン予選 2 : 2021年6月12日 17:00～<br />
+            日本最終予選 : 2021年6月25日<br />
+            アジア決勝 : 2021年7月11日～14日<br />
+          </p>
+        </div>
+        <div class="md:w-1/3">
+          <img
+            class="object-cover object-center w-full rounded-md shadow"
+            style="height: 700px"
+            src="~/static/images/rl-3.jpg"
+          />
         </div>
       </div>
-    </section> -->
-
-    <!-- <section class="bg-white">
-      <div class="max-w-5xl px-6 py-16 mx-auto">
-        <div class="items-center md:flex md:space-x-6">
-          <div class="md:w-1/2">
-            <div class="flex items-center justify-center">
-              <div class="max-w-md">
-                <img
-                  class="object-cover object-center w-full rounded-md shadow"
-                  style="height: 500px"
-                  src="https://images.unsplash.com/photo-1616874535244-73aea5daadb9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-8 md:mt-0 md:w-1/2">
-            <h3 class="text-2xl font-semibold text-gray-800">
-              Lorem ipsum dolor sit <br />
-              amet, consectetur
-            </h3>
-            <p class="max-w-md mt-4 text-gray-600">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum.
-            </p>
-            <a href="#" class="block mt-8 text-indigo-700 underline"
-              >Experienced team</a
-            >
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- <section class="bg-white">
-      <div class="max-w-5xl px-6 py-16 mx-auto">
-        <h2 class="text-3xl font-semibold text-gray-800">
-          Lorem ipsum dolor sit amet, <br />
-          consectetur adipiscing
-        </h2>
-        <p class="max-w-lg mt-4 text-gray-600">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
+    </section>
+    <section class="bg-white" id="teams" v-for="item in teams" :key="item.team">
+      <div class="max-w-5xl px-6 py-16 mx-auto text-center">
+        <h2 class="text-3xl font-semibold text-gray-800">{{ item.name }}</h2>
+        <p class="max-w-lg mx-auto mt-4 text-gray-600">
+          {{ item.description }}
         </p>
-        <div class="grid gap-8 mt-10 md:mt-20 md:grid-cols-2">
-          <div class="flex space-x-4">
-            <svg
-              class="w-6 h-6 text-gray-500"
-              viewBox="0 0 50 50"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M47.6268 23.7062C48.2466 24.4484 48.2466 25.5277 47.6268 26.2699L44.4812 30.0372C43.803 30.8493 43.4742 31.8971 43.5669 32.9512L44.0044 37.9287C44.0912 38.9165 43.4411 39.8188 42.4765 40.0491L38.0619 41.1031C36.9808 41.3612 36.0559 42.0575 35.5089 43.025L33.2053 47.099C32.6961 47.9995 31.5844 48.3631 30.6415 47.9375L26.6498 46.1358C25.6003 45.6621 24.3976 45.6636 23.3493 46.14L19.3597 47.9531C18.4161 48.3819 17.3014 48.0189 16.7912 47.1168L14.4911 43.0489C13.9441 42.0814 13.0192 41.3851 11.9381 41.127L7.52286 40.0728C6.55849 39.8426 5.90838 38.9406 5.99496 37.9529L6.43346 32.9505C6.52583 31.8968 6.19706 30.8494 5.5191 30.0375L2.37029 26.2665C1.75138 25.5253 1.75043 24.4477 2.36803 23.7054L5.52362 19.9127C6.1988 19.1012 6.52582 18.0557 6.43339 17.0041L5.99624 12.0308C5.90922 11.0408 6.56225 10.1372 7.52946 9.90904L11.9298 8.87123C13.0153 8.61522 13.9446 7.91765 14.4935 6.94684L16.7947 2.87709C17.3039 1.97664 18.4156 1.61302 19.3585 2.03858L23.3544 3.8422C24.4007 4.31444 25.5993 4.31444 26.6456 3.8422L30.6415 2.03858C31.5844 1.61301 32.6961 1.97663 33.2053 2.87709L35.5089 6.95112C36.0559 7.9186 36.9808 8.61486 38.0619 8.87297L42.4765 9.92701C43.4411 10.1573 44.0912 11.0596 44.0044 12.0474L43.5669 17.0249C43.4742 18.079 43.803 19.1268 44.4812 19.939L47.6268 23.7062ZM25 37.9326C26.8075 37.9326 28.2727 36.4674 28.2727 34.6599V34.4275C28.2727 32.6201 26.8075 31.1548 25 31.1548C23.1925 31.1548 21.7273 32.6201 21.7273 34.4275V34.6599C21.7273 36.4674 23.1925 37.9326 25 37.9326ZM25 28.377C26.8075 28.377 28.2727 26.9117 28.2727 25.1042V15.3162C28.2727 13.5087 26.8075 12.0435 25 12.0435C23.1925 12.0435 21.7273 13.5087 21.7273 15.3162V25.1042C21.7273 26.9117 23.1925 28.377 25 28.377Z"
-                stroke="currentColor"
-                stroke-width="2"
-              />
-            </svg>
 
+        <div class="mt-6 flex flex-wrap justify-center">
+          <div
+            v-for="member in item.members"
+            :key="member.name"
+            class="m-4 w-48 flex flex-wrap justify-center cursor-pointer"
+            @click="
+              openModal(
+                item.name,
+                item.root,
+                member.name,
+                member.twitter,
+                member.filename
+              )
+            "
+          >
+            <img
+              v-if="member.filename != ''"
+              class="object-contain object-center rounded-md shadow"
+              :src="userIcon(item.name, item.root, member.filename)"
+            />
             <div>
-              <h4 class="text-xl font-medium text-gray-800">Design concept</h4>
-              <p class="max-w-lg mt-4 text-gray-600">
-                Vitae nulla nunc euismod vel nunc euismod velpretium tellus
-                accumsan nulla nunc euismod ve semper.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex space-x-4">
-            <svg
-              class="w-6 h-6 text-gray-500"
-              viewBox="0 0 50 50"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1 25C1 11.8023 11.8023 1 25 1C38.1977 1 49 11.8023 49 25C49 38.1977 38.1977 49 25 49C11.8023 49 1 38.1977 1 25ZM33.36 35.3573C34.7228 36.1959 36.5074 35.771 37.346 34.4082C38.1913 33.0346 37.7522 31.2351 36.3692 30.4053L28.221 25.5164C27.6186 25.155 27.25 24.504 27.25 23.8014V14.375C27.25 12.7872 25.9628 11.5 24.375 11.5C22.7872 11.5 21.5 12.7872 21.5 14.375V25.8236C21.5 27.2127 22.2206 28.5023 23.4036 29.2302L33.36 35.3573Z"
-                stroke="currentColor"
-                stroke-width="2"
-              />
-            </svg>
-
-            <div>
-              <h4 class="text-xl font-medium text-gray-800">
-                Developing websites
-              </h4>
-              <p class="max-w-lg mt-4 text-gray-600">
-                Vitae nulla euismod velpretium tellus accumsan nulla nunc
-                euismod ve semper. Vitae nulla euismod velpretium tellus
-                accumsan nulla nunc euismod ve semper. Vitae nulla euismod
-                velpretium tellus accumsan nulla nunc euismod ve semper.
-              </p>
+              <h3 class="mt-2 font-medium text-gray-700">{{ member.name }}</h3>
+              <p class="text-sm text-gray-600">詳しく見る</p>
             </div>
           </div>
         </div>
       </div>
-    </section> -->
-
-    <!-- <section class="bg-white">
+    </section>
+    <Modal v-if="modalFlag" @close-modal="closeModal">
+      <div class="grid gap-8 mt-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+        <div v-if="modalData.filename != ''">
+          <img
+            class="left object-contain object-center rounded-md shadow w-64"
+            :src="
+              userIcon(
+                modalData.teamName,
+                modalData.rootName,
+                modalData.filename
+              )
+            "
+          />
+        </div>
+        <div>
+          <p>チーム</p>
+          <div class="p-4 text-2xl">
+            {{ modalData.teamName }}
+          </div>
+          <p>名前</p>
+          <div class="p-4 text-2xl">{{ modalData.memberName }}</div>
+          <div v-if="modalData.twitter != ''">
+            <p>Twitter</p>
+            <div class="p-4 text-2xl">{{ modalData.twitter }}</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="m-4 p-4 bg-gray-200 rounded" @click="closeModal">
+          閉じる
+        </button>
+      </div>
+    </Modal>
+    <section class="bg-white">
       <div class="max-w-5xl px-6 py-16 mx-auto">
         <div
           class="
@@ -307,11 +288,10 @@
         >
           <div>
             <h3 class="text-2xl font-semibold text-white">
-              Lorem ipsum dolor sit amet
+              ロケットリーグ 日本コミュニティ
             </h3>
             <p class="max-w-md mt-4 text-gray-400">
-              Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
-              volutpat, viverra magna risus aliquam massa.
+              大会情報、オフラインイベントなどや、アップデート、初心者向けTipsなどなどロケットリーグについての様々な情報を発信していくコミュニティWebサイトです。
             </p>
           </div>
 
@@ -332,178 +312,12 @@
               md:mt-0
               hover:bg-indigo-500
             "
-            href="#"
-            >Get In Touch</a
+            href="https://rl-japan.com"
+            >詳しく見る</a
           >
-        </div>
-      </div>
-    </section> -->
-
-    <!-- <section class="bg-white">
-      <div class="max-w-5xl px-6 py-16 mx-auto">
-        <div class="md:flex md:justify-between">
-          <h2 class="text-3xl font-semibold text-gray-800">
-            Lorem ipsum dolor sit amet, consectetur <br />
-            adipiscing elit, sed do eiusmod
-          </h2>
-          <a href="#" class="block mt-6 text-indigo-700 underline md:mt-0"
-            >Experienced team</a
-          >
-        </div>
-
-        <div class="grid gap-8 mt-10 md:grid-cols-2 lg:grid-cols-3">
-          <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
-            <h2 class="text-xl font-medium text-gray-800">Audio</h2>
-            <p class="max-w-md mt-4 text-gray-400">
-              Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
-              volutpat, viverra magna risus aliquam massa.
-            </p>
-          </div>
-
-          <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
-            <h2 class="text-xl font-medium text-gray-800">Audio</h2>
-            <p class="max-w-md mt-4 text-gray-400">
-              Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
-              volutpat, viverra magna risus aliquam massa.
-            </p>
-          </div>
-
-          <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
-            <h2 class="text-xl font-medium text-gray-800">Audio</h2>
-            <p class="max-w-md mt-4 text-gray-400">
-              Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
-              volutpat, viverra magna risus aliquam massa.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- <section class="bg-white">
-      <div class="max-w-5xl px-6 py-16 mx-auto text-center">
-        <h2 class="text-3xl font-semibold text-gray-800">
-          Lorem ipsum dolor sit amet, <br />
-          consectetur adipiscing
-        </h2>
-        <p class="max-w-lg mx-auto mt-4 text-gray-600">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
-        </p>
-
-        <img
-          class="object-cover object-center w-full mt-16 rounded-md shadow h-80"
-          src="https://images.unsplash.com/photo-1600069226367-412873fb0637?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-        />
-      </div>
-    </section> -->
-
-    <!-- <section class="bg-white">
-      <div
-        class="
-          max-w-5xl
-          px-6
-          py-16
-          mx-auto
-          space-y-8
-          md:flex
-          md:items-center
-          md:space-y-0
-        "
-      >
-        <div class="md:w-2/3">
-          <div class="hidden md:flex md:items-center md:space-x-10">
-            <img
-              class="object-cover object-center rounded-md shadow w-72 h-72"
-              src="https://images.unsplash.com/photo-1614030126544-b79b92e29e98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-            />
-            <img
-              class="object-cover object-center w-64 rounded-md shadow h-96"
-              src="https://images.unsplash.com/photo-1618506469810-282bef2b30b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            />
-          </div>
-          <h2 class="text-3xl font-semibold text-gray-800 md:mt-6">
-            Lorem ipsum dolor
-          </h2>
-          <p class="max-w-lg mt-4 text-gray-600">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse illum
-            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-            non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
-          </p>
-        </div>
-        <div class="md:w-1/3">
-          <img
-            class="object-cover object-center w-full rounded-md shadow"
-            style="height: 700px"
-            src="https://images.unsplash.com/photo-1593352216840-1aee13f45818?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-          />
-        </div>
-      </div>
-    </section> -->
-    <section class="bg-white" id="teams" v-for="item in teams" :key="item.team">
-      <div class="max-w-5xl px-6 py-16 mx-auto text-center">
-        <h2 class="text-3xl font-semibold text-gray-800">{{ item.name }}</h2>
-        <p class="max-w-lg mx-auto mt-4 text-gray-600">
-          {{ item.description }}
-        </p>
-
-        <div class="mt-6 flex flex-wrap justify-center">
-          <div
-            v-for="member in item.members"
-            :key="member.name"
-            class="m-4 w-48 flex flex-wrap justify-center cursor-pointer"
-            @click="
-              openModal(item.name, item.root, member.name, member.twitter)
-            "
-          >
-            <img
-              class="object-contain object-center rounded-md shadow"
-              :src="userIcon(item.name, item.root, member.name)"
-            />
-            <div>
-              <h3 class="mt-2 font-medium text-gray-700">{{ member.name }}</h3>
-              <p class="text-sm text-gray-600">詳しく見る</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
-    <Modal v-if="modalFlag" @close-modal="closeModal">
-      <div class="grid gap-8 mt-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-        <div>
-          <img
-            class="left object-contain object-center rounded-md shadow w-64"
-            :src="
-              userIcon(
-                modalData.teamName,
-                modalData.rootName,
-                modalData.memberName,
-                modalData.twitter
-              )
-            "
-          />
-        </div>
-        <div>
-          <p>チーム</p>
-          <div class="p-4 text-2xl">
-            {{ modalData.teamName }}
-          </div>
-          <p>名前</p>
-          <div class="p-4 text-2xl">{{ modalData.memberName }}</div>
-          <p>Twitter</p>
-          <div class="p-4 text-2xl">{{ modalData.twitter }}</div>
-        </div>
-      </div>
-      <div>
-        <button class="m-4 p-4 bg-gray-200 rounded" @click="closeModal">
-          閉じる
-        </button>
-      </div>
-    </Modal>
     <footer class="border-t mt-8">
       <div
         class="container flex items-center justify-between px-6 py-8 mx-auto"
@@ -523,16 +337,493 @@ export default {
     return {
       modalFlag: false,
       isOpen: false,
-      modalData: { teamName: '', rootName: '', memberName: '', twitter: '' },
+      modalData: {
+        teamName: '',
+        rootName: '',
+        memberName: '',
+        twitter: '',
+        filename: '',
+      },
       teams: [
+        {
+          name: 'BLAST',
+          description: '',
+          root: 'BST',
+          members: [
+            { name: 'shuka(shuka)', twitter: 'shuka_rl', filename: 'shuka' },
+            {
+              name: 'amatel(amatel)',
+              twitter: 'amatelll',
+              filename: 'amatel',
+            },
+            { name: 'ma2ris(ma2ris)', twitter: 'ma2ris', filename: 'ma2ris' },
+            {
+              name: 'ONRUSH(Onrush,Mao)',
+              twitter: 'mon738',
+              filename: 'mao',
+            },
+          ],
+        },
         {
           name: 'Bloom',
           description: '',
           root: 'Bloom',
           members: [
-            { name: 'mido', twitter: 'gelll' },
-            { name: 'YMTO', twitter: 'gelll' },
-            { name: 'zou', twitter: 'gelll' },
+            { name: 'mido(mido)', twitter: 'mido_rl', filename: 'mido' },
+            { name: 'YMTO(YMTO)', twitter: 'Yamaimo_YMTO', filename: 'YMTO' },
+            { name: 'zou(zou)', twitter: 'mon738', filename: 'zou' },
+          ],
+        },
+        {
+          name: 'BumpyPumpy',
+          description: '',
+          root: 'BP',
+          members: [
+            { name: 'OLPiX(OLPiX)', twitter: 'OlpixRL', filename: 'olpix' },
+            {
+              name: 'shaolon(shaolon)',
+              twitter: 'khmnt1995',
+              filename: 'shaolon',
+            },
+            { name: 'BurnRL_(Burn)', twitter: 'BurnRL', filename: 'burn' },
+          ],
+        },
+        {
+          name: 'C.Companion',
+          description: '',
+          root: 'CC',
+          members: [
+            {
+              name: 'tananatu(たななつ)',
+              twitter: 'tananatuv',
+              filename: 'tananatu',
+            },
+            {
+              name: 'Akiphic(Akiphic)',
+              twitter: 'Akiphic',
+              filename: 'akiphic',
+            },
+            {
+              name: 'kuma2ki(くまつき)',
+              twitter: 'kuma2ki',
+              filename: 'kumatuki',
+            },
+          ],
+        },
+        {
+          name: 'CVent',
+          description: '',
+          root: 'CVent',
+          members: [
+            {
+              name: 'waiwai(わいわい)',
+              twitter: 'tugumegu0214',
+              filename: 'わいわい',
+            },
+            {
+              name: 'temma(てんま)',
+              twitter: '',
+              filename: 'てんま',
+            },
+            {
+              name: 'SUGAVUKI(ぶっきー)',
+              twitter: '',
+              filename: 'ぶっきー',
+            },
+          ],
+        },
+        {
+          name: 'Death phoenix',
+          description: '',
+          root: '',
+          members: [
+            {
+              name: 'Matechin',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'BUHIKIN',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'cherico',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
+          name: 'Diamond Dust',
+          description: '',
+          root: '',
+          members: [
+            {
+              name: 'Ren',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'KEI',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'DOMI',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
+          name: 'Doggo',
+          description: '',
+          root: 'Doggo',
+          members: [
+            {
+              name: 'mikan(mikan)',
+              twitter: 'mikanRL_',
+              filename: 'mikan',
+            },
+            {
+              name: 'Nemoto Putti(ねもとぷっち)',
+              twitter: 'nemotoputti',
+              filename: 'nemotoputti',
+            },
+            {
+              name: 'B-Lain(Battlelain)',
+              twitter: '',
+              filename: 'Battlelain',
+            },
+          ],
+        },
+        {
+          name: 'Flower Fighters',
+          description: '',
+          root: '',
+          members: [
+            {
+              name: 'loxee',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'yori_xmma',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'medo',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
+          name: 'GracesBlaze',
+          description: '',
+          root: 'GB',
+          members: [
+            {
+              name: 'UtsuhoRin(空凛(うつほ りん))',
+              twitter: '',
+              filename: 'utuhorin',
+            },
+            {
+              name: 'RNE.(RNE.)',
+              twitter: '',
+              filename: 'rne',
+            },
+            {
+              name: 'Urayasu(うらやす)',
+              twitter: '',
+              filename: 'urayasu',
+            },
+            {
+              name: 'Ron.',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
+          name: 'Gutan Gaming α',
+          description: '',
+          root: 'Gutan',
+          members: [
+            {
+              name: 'EclaiL(EclaiL)',
+              twitter: 'EclaiL_RL',
+              filename: 'eclaiL',
+            },
+            {
+              name: 'slpp(slct)',
+              twitter: 'select_rl',
+              filename: 'slct',
+            },
+            {
+              name: 'Krilin(Krilin)',
+              twitter: 'KrilinRL',
+              filename: 'krilin',
+            },
+          ],
+        },
+        {
+          name: 'LeftFront Gaming',
+          description: '',
+          root: 'LFG',
+          members: [
+            {
+              name: 'great_nobuo(Great_Nobuo)',
+              twitter: '',
+              filename: 'nobuo',
+            },
+            {
+              name: 'kashu72(カシューナッツ)',
+              twitter: '',
+              filename: 'kasyu',
+            },
+            {
+              name: 'Taiyaki24006(taiyaki)',
+              twitter: '',
+              filename: 'taiyaki',
+            },
+            {
+              name: 'kei-chan31(慶ちゃん)',
+              twitter: '',
+              filename: 'keichan',
+            },
+          ],
+        },
+        {
+          name: 'NOR',
+          description: '',
+          root: 'NOR',
+          members: [
+            {
+              name: 'Ryzow(Ryzow)',
+              twitter: 'Ryzow',
+              filename: 'ryzow',
+            },
+            {
+              name: 'NiKo(Niko)',
+              twitter: 'niko__211',
+              filename: 'Niko',
+            },
+            {
+              name: 'Haru(Haru)',
+              twitter: '',
+              filename: 'haru',
+            },
+          ],
+        },
+        {
+          name: 'NRLG Cats',
+          description: '',
+          root: 'NRLGC',
+          members: [
+            {
+              name: 'Arinko(ありんこ)',
+              twitter: 'Arinko_RL',
+              filename: 'arinko',
+            },
+            {
+              name: 'sk(sk)',
+              twitter: '',
+              filename: 'sk',
+            },
+            {
+              name: 'motikun.(motikun.)',
+              twitter: 'motikun_RL',
+              filename: 'motikun',
+            },
+          ],
+        },
+        {
+          name: 'NRLG Cows',
+          description: '',
+          root: '',
+          members: [
+            {
+              name: 'ken_nekotami',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'tenpuraaaa',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'aviyon',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'ricardo',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
+          name: 'NucoEsports',
+          description: '',
+          root: 'NucoE',
+          members: [
+            {
+              name: 'Nuco(Nuco)',
+              twitter: '',
+              filename: 'nuco',
+            },
+            {
+              name: 'itochan1213_Twitch(いとちゃん)',
+              twitter: 'itoa1213',
+              filename: 'ito',
+            },
+            {
+              name: 'Reg(葉月れぐ)',
+              twitter: 'Reg_games',
+              filename: 'reg',
+            },
+          ],
+        },
+        {
+          name: 'Shotgun Mystery Team',
+          description: '',
+          root: '',
+          members: [
+            {
+              name: 'Doomsee',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'goon303rt',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'Fyshokid',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
+          name: 'Sylphide',
+          description: '',
+          root: 'Sylphide',
+          members: [
+            {
+              name: 'pikanya(pikanya)',
+              twitter: 'pikanya1029',
+              filename: 'pikanya',
+            },
+            {
+              name: 'Ayun(Ayun)',
+              twitter: '',
+              filename: 'Ayun',
+            },
+            {
+              name: 'defiant(defiant)',
+              twitter: 'defiantpesky',
+              filename: 'defiant',
+            },
+          ],
+        },
+        {
+          name: 'Team GDS',
+          description: '#がんだーずwin',
+          root: 'GDS',
+          members: [
+            {
+              name: 'Retra(れとら)',
+              twitter: '@Retra_',
+              filename: 'retra',
+            },
+            {
+              name: 'pottechis(ぽてち)',
+              twitter: '',
+              filename: 'poteti',
+            },
+            {
+              name: 'niko2kanta',
+              twitter: 'niko2kanta',
+              filename: 'niko2',
+            },
+            {
+              name: 'Alexandre',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
+          name: 'Team Hatomit',
+          description: '',
+          root: '',
+          members: [
+            {
+              name: 'MitJUSTICE',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'Max Verstappen',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'thirty 2',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
+          name: 'Tokyo Verdy',
+          description: '',
+          root: '',
+          members: [
+            {
+              name: 'ReaLizeRL',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'Maru',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'Tenhow',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
+          name: 'val',
+          description: '',
+          root: '',
+          members: [
+            {
+              name: 'n4sh',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'zalez_41',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'tanukin',
+              twitter: '',
+              filename: '',
+            },
           ],
         },
         {
@@ -540,10 +831,88 @@ export default {
           description: '',
           root: 'wakatteru',
           members: [
-            { name: '47', twitter: 'gelll' },
-            { name: 'khrono', twitter: 'gelll' },
-            { name: 'teruteru', twitter: 'gelll' },
-            { name: 'wakavi', twitter: 'gelll' },
+            { name: 'shina_vt(47)', twitter: '47_si_na', filename: '47' },
+            {
+              name: 'Teruteru833(てるてる)',
+              twitter: 'teru_teru_v',
+              filename: 'teruteru',
+            },
+            {
+              name: 'viechan(わかびー)',
+              twitter: 'ViechST',
+              filename: 'wakavi',
+            },
+            {
+              name: 'Khrono_Inugami(Khrono^~^)',
+              twitter: '',
+              filename: 'khrono',
+            },
+          ],
+        },
+        {
+          name: 'Xayfhers',
+          description: '#XFSWIN',
+          root: 'XFS',
+          members: [
+            {
+              name: 'peseta(ぺせた)',
+              twitter: 'peseta999',
+              filename: 'pese',
+            },
+            {
+              name: 'Arch(Arch)',
+              twitter: '_4rch',
+              filename: 'arch',
+            },
+            {
+              name: 'Lil PLASMA(Lil PLASMA)',
+              twitter: 'Plazma_RL',
+              filename: 'plasma',
+            },
+          ],
+        },
+        {
+          name: 'Yamaha esports Boosters',
+          description: '#YAMAHAWIN',
+          root: 'Yamaha',
+          members: [
+            {
+              name: 'CeLLiS(ちえりす)',
+              twitter: '',
+              filename: 'cellis',
+            },
+            {
+              name: 'gaming_moririn(もりりん)',
+              twitter: '',
+              filename: 'moririn',
+            },
+            {
+              name: 'Bernardel(ベルナルデル)',
+              twitter: '',
+              filename: 'bernardel',
+            },
+          ],
+        },
+        {
+          name: 'youtuber仲間',
+          description: '',
+          root: '',
+          members: [
+            {
+              name: 'yumegamitatsumi',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'Hayate',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'koma',
+              twitter: '',
+              filename: '',
+            },
           ],
         },
       ],
@@ -555,11 +924,12 @@ export default {
       console.log(`~/static/teams/${teamName}/${rootName}_${memberName}.jpg`)
       return require(`~/static/teams/${teamName}/${rootName}_${memberName}.jpg`)
     },
-    openModal(teamName, rootName, memberName, memberTwitter) {
+    openModal(teamName, rootName, memberName, memberTwitter, filename) {
       this.modalData.teamName = teamName
       this.modalData.rootName = rootName
       this.modalData.memberName = memberName
       this.modalData.twitter = memberTwitter
+      this.modalData.filename = filename
       this.modalFlag = true
     },
     closeModal() {
