@@ -579,17 +579,17 @@ export default {
         {
           name: 'Irithyll',
           description: '',
-          root: '',
+          root: 'Iritny',
           members: [
             {
               name: 'lahire(らは)',
               twitter: '',
-              filename: '',
+              filename: 'lahire',
             },
             {
-              name: 'tetu',
-              twitter: '',
-              filename: '',
+              name: 'tetu(tetu)',
+              twitter: 'nekoteturl',
+              filename: 'tetu',
             },
             {
               name: 'assault',
