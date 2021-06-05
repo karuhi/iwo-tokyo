@@ -577,6 +577,50 @@ export default {
           ],
         },
         {
+          name: 'Irithyll',
+          description: '',
+          root: '',
+          members: [
+            {
+              name: 'lahire(らは)',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'tetu',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'assault',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
+          name: 'Jumble',
+          description: '',
+          root: '',
+          members: [
+            {
+              name: 'Hiro',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'HERMES(えるめす)',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'Onabe no Huta(Onabe no Huta)',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
           name: 'LeftFront Gaming',
           description: '',
           root: 'LFG',
