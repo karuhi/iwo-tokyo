@@ -204,12 +204,159 @@
         </div>
       </div>
     </section>
-    <section class="bg-white" id="teams" v-for="item in teams" :key="item.team">
+
+    <section class="bg-white">
+      <div class="max-w-5xl px-6 pt-16 pb-4 mx-auto">
+        <div
+          class="
+            px-8
+            py-12
+            bg-gray-800
+            rounded-md
+            md:px-20
+            md:flex
+            md:items-center
+            md:justify-between
+          "
+        >
+          <div>
+            <h3 class="text-2xl font-semibold text-white">
+              {{
+                Object.keys(fillteredTeams).length
+              }}チームから出場チームを絞り込む
+            </h3>
+            <p class="max-w-md mt-4 text-gray-400"></p>
+            <label class="inline-flex items-center mt-3">
+              <input
+                type="checkbox"
+                class="form-checkbox h-5 w-5 text-blue-600"
+                v-model="q1c"
+              />
+              <span class="ml-2 text-gray-400"> Qualifier #1 出場チーム </span>
+            </label>
+
+            <label class="inline-flex items-center mt-3">
+              <input
+                type="checkbox"
+                class="form-checkbox h-5 w-5 text-indigo-600"
+                v-model="q2c"
+              />
+              <span class="ml-2 text-gray-400"> Qualifier #2 出場チーム </span>
+            </label>
+          </div>
+          <div>
+            <input
+              type="search"
+              class="bg-purple-white shadow rounded border-0 mt-4 p-3"
+              placeholder="名前から探す"
+              v-model="search"
+            />
+            <button
+              class="
+                py-3
+                px-4
+                text-center text-white
+                transition-colors
+                duration-300
+                transform
+                bg-gray-600
+                rounded
+                md:mt-0
+                hover:bg-gray-500
+              "
+              @click="search = ''"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      v-if="fillteredTeams.length == 0"
+      class="max-w-5xl px-6 py-16 mx-auto text-center"
+    >
+      <h2 class="text-3xl font-semibold text-gray-400">
+        出場チームが見つかりません :(
+      </h2>
+    </section>
+    <!-- <section v-else>
+      <div class="max-w-5xl mx-auto px-6 text-center flex justify-end">
+        <div class="relative inline-flex">
+          <svg
+            class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 412 232"
+          >
+            <path
+              d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
+              fill="#648299"
+              fill-rule="nonzero"
+            />
+          </svg>
+          <select
+            class="
+              border border-gray-300
+              rounded-full
+              text-gray-600
+              h-10
+              pl-5
+              pr-10
+              bg-white
+              hover:border-gray-400
+              focus:outline-none
+              appearance-none
+            "
+            v-model="selected"
+          >
+            <option v-for="ft in fillteredTeams" :key="`selft-${ft.name}`">
+              {{ ft.name }}
+            </option>
+          </select>
+        </div>
+        <button
+          class="
+            mx-2
+            px-4
+            text-center text-white
+            transition-colors
+            duration-300
+            transform
+            bg-gray-600
+            rounded
+            md:mt-0
+            hover:bg-gray-500
+          "
+          @click="selected = ''"
+        >
+          ×
+        </button>
+      </div>
+    </section> -->
+    <section
+      class="bg-white"
+      id="teams"
+      v-for="item in fillteredTeams"
+      :key="item.team"
+    >
       <div class="max-w-5xl px-6 py-16 mx-auto text-center">
         <h2 class="text-3xl font-semibold text-gray-800">{{ item.name }}</h2>
         <p class="max-w-lg mx-auto mt-4 text-gray-600">
           {{ item.description }}
         </p>
+        <span
+          v-if="item.q1"
+          class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs"
+        >
+          Qualifier #1 出場チーム
+        </span>
+        &nbsp;
+        <span
+          v-if="item.q2"
+          class="bg-yellow-200 text-yellow-600 py-1 px-3 rounded-full text-xs"
+        >
+          Qualifier #2 出場チーム
+        </span>
 
         <div class="mt-6 flex flex-wrap justify-center">
           <div
@@ -319,7 +466,7 @@
               md:mt-0
               hover:bg-indigo-500
             "
-            href="https://rl-japan.com"
+            href="https://rl-japan.com/?utm_source=site&utm_medium=banner&utm_campaign=get_information"
             >詳しく見る</a
           >
         </div>
@@ -344,6 +491,10 @@ export default {
     return {
       modalFlag: false,
       isOpen: false,
+      q1c: false,
+      q2c: true,
+      search: '',
+      selected: '',
       modalData: {
         teamName: '',
         rootName: '',
@@ -354,8 +505,10 @@ export default {
       teams: [
         {
           name: 'BLAST',
-          description: '',
+          description: '#BSTWIN',
           root: 'BST',
+          q1: true,
+          q2: true,
           members: [
             { name: 'shuka(shuka)', twitter: 'shuka_rl', filename: 'shuka' },
             {
@@ -375,6 +528,8 @@ export default {
           name: 'Bloom',
           description: '',
           root: 'Bloom',
+          q1: true,
+          q2: false,
           members: [
             { name: 'mido(mido)', twitter: 'mido_rl', filename: 'mido' },
             { name: 'YMTO(YMTO)', twitter: 'Yamaimo_YMTO', filename: 'YMTO' },
@@ -385,6 +540,8 @@ export default {
           name: 'BumpyPumpy',
           description: '',
           root: 'BP',
+          q1: true,
+          q2: false,
           members: [
             { name: 'OLPiX(OLPiX)', twitter: 'OlpixRL', filename: 'olpix' },
             {
@@ -399,6 +556,8 @@ export default {
           name: 'C.Companion',
           description: '',
           root: 'CC',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'tananatu(たななつ)',
@@ -421,6 +580,8 @@ export default {
           name: 'CVent',
           description: '',
           root: 'CVent',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'waiwai(わいわい)',
@@ -443,6 +604,8 @@ export default {
           name: 'Death phoenix',
           description: '',
           root: '',
+          q1: true,
+          q2: false,
           members: [
             {
               name: 'Matechin',
@@ -465,6 +628,8 @@ export default {
           name: 'Diamond Dust',
           description: '',
           root: '',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'Ren',
@@ -487,6 +652,8 @@ export default {
           name: 'Doggo',
           description: '',
           root: 'Doggo',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'mikan(mikan)',
@@ -509,6 +676,8 @@ export default {
           name: 'Flower Fighters',
           description: '',
           root: '',
+          q1: true,
+          q2: false,
           members: [
             {
               name: 'loxee',
@@ -531,6 +700,8 @@ export default {
           name: 'GracesBlaze',
           description: '',
           root: 'GB',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'UtsuhoRin(空凛(うつほ りん))',
@@ -558,6 +729,8 @@ export default {
           name: 'Gutan Gaming α',
           description: '',
           root: 'Gutan',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'EclaiL(EclaiL)',
@@ -577,9 +750,35 @@ export default {
           ],
         },
         {
+          name: 'HAZE',
+          description: '',
+          root: '',
+          q1: false,
+          q2: true,
+          members: [
+            {
+              name: 'ra0045vr',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'Birb',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'eco',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
           name: 'Irithyll',
           description: '',
           root: 'Iritny',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'lahire(らは)',
@@ -602,6 +801,8 @@ export default {
           name: 'Jumble',
           description: '',
           root: '',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'Hiro',
@@ -624,6 +825,8 @@ export default {
           name: 'LeftFront Gaming',
           description: '',
           root: 'LFG',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'great_nobuo(Great_Nobuo)',
@@ -648,9 +851,35 @@ export default {
           ],
         },
         {
+          name: 'mgh',
+          description: '',
+          root: '',
+          q1: false,
+          q2: true,
+          members: [
+            {
+              name: 'TTV_FLASH810_JP',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'CURAGE777',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'Ajisai3',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
           name: 'NOR',
           description: '',
           root: 'NOR',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'Ryzow(Ryzow)',
@@ -673,6 +902,8 @@ export default {
           name: 'NRLG Cats',
           description: '',
           root: 'NRLGC',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'Arinko(ありんこ)',
@@ -695,6 +926,8 @@ export default {
           name: 'NRLG Cows',
           description: '',
           root: '',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'ken_nekotami',
@@ -719,9 +952,35 @@ export default {
           ],
         },
         {
+          name: 'Ricochet',
+          description: '',
+          root: '',
+          q1: false,
+          q2: true,
+          members: [
+            {
+              name: 'KOMeNO',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'Cliche70',
+              twitter: '',
+              filename: '',
+            },
+            {
+              name: 'RIN',
+              twitter: '',
+              filename: '',
+            },
+          ],
+        },
+        {
           name: 'NucoEsports',
           description: '',
           root: 'NucoE',
+          q1: true,
+          q2: false,
           members: [
             {
               name: 'Nuco(Nuco)',
@@ -744,6 +1003,8 @@ export default {
           name: 'Shotgun Mystery Team',
           description: '',
           root: '',
+          q1: false,
+          q2: true,
           members: [
             {
               name: 'Doomsee',
@@ -766,6 +1027,8 @@ export default {
           name: 'Sylphide',
           description: '',
           root: 'Sylphide',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'pikanya(pikanya)',
@@ -788,6 +1051,8 @@ export default {
           name: 'Team GDS',
           description: '#がんだーずwin',
           root: 'GDS',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'Retra(れとら)',
@@ -815,6 +1080,8 @@ export default {
           name: 'Team Hatomit',
           description: '',
           root: '',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'MitJUSTICE',
@@ -837,6 +1104,8 @@ export default {
           name: 'Tokyo Verdy',
           description: '',
           root: '',
+          q1: true,
+          q2: false,
           members: [
             {
               name: 'ReaLizeRL',
@@ -859,6 +1128,8 @@ export default {
           name: 'val',
           description: '',
           root: '',
+          q1: true,
+          q2: false,
           members: [
             {
               name: 'n4sh',
@@ -881,6 +1152,8 @@ export default {
           name: 'wakatteru47',
           description: '',
           root: 'wakatteru',
+          q1: true,
+          q2: true,
           members: [
             { name: 'shina_vt(47)', twitter: '47_si_na', filename: '47' },
             {
@@ -904,6 +1177,8 @@ export default {
           name: 'Xayfhers',
           description: '#XFSWIN',
           root: 'XFS',
+          q1: true,
+          q2: true,
           members: [
             {
               name: 'peseta(ぺせた)',
@@ -926,6 +1201,8 @@ export default {
           name: 'Yamaha esports Boosters',
           description: '#YAMAHAWIN',
           root: 'Yamaha',
+          q1: true,
+          q2: false,
           members: [
             {
               name: 'CeLLiS(ちえりす)',
@@ -948,6 +1225,8 @@ export default {
           name: 'youtuber仲間',
           description: '',
           root: '',
+          q1: true,
+          q2: false,
           members: [
             {
               name: 'yumegamitatsumi',
@@ -969,10 +1248,37 @@ export default {
       ],
     }
   },
+  computed: {
+    fillteredTeams() {
+      let teams = this.teams
+      const vm = this
+      if (this.q1c || this.q2c) {
+        teams = teams.filter((item) => {
+          return item.q1 == vm.q1c || item.q2 == vm.q2c
+        })
+        if (this.selected) {
+          teams = teams.filter((item) => {
+            return item.name == this.selected
+          })
+        } else {
+          if (this.search)
+            teams = teams.filter((item) => {
+              return (
+                item.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+              )
+            })
+        }
+
+        return teams
+      } else {
+        return []
+      }
+    },
+  },
   mounted() {},
   methods: {
     userIcon: function (teamName, rootName, memberName) {
-      console.log(`~/static/teams/${teamName}/${rootName}_${memberName}.jpg`)
+      // console.log(`~/static/teams/${teamName}/${rootName}_${memberName}.jpg`)
       return require(`~/static/teams/${teamName}/${rootName}_${memberName}.jpg`)
     },
     openModal(teamName, rootName, memberName, memberTwitter, filename) {
