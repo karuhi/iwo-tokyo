@@ -255,7 +255,7 @@
               </span>
             </label>
           </div>
-          <div>
+          <!-- <div>
             <input
               type="search"
               class="bg-purple-white shadow rounded border-0 mt-4 p-3"
@@ -279,7 +279,7 @@
             >
               ×
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -1253,7 +1253,11 @@ export default {
         console.log(vm.q1c, vm.q2c, vm.qcq)
         teams = teams.filter((item) => {
           console.log(item.name, item.q1, item.q2, item.cq)
-          return item.q1 == vm.q1c || item.q2 == vm.q2c || item.cq == vm.qcq
+          return (
+            (item.q1 && item.q1 == vm.q1c) ||
+            (item.q2 && item.q2 == vm.q2c) ||
+            (item.cq && item.cq == vm.qcq)
+          )
         })
         // if (this.search)
         //   teams = teams.filter((item) => {
